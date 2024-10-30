@@ -6,4 +6,12 @@
 # 378
 # Вывод:
 # 2*3*3*3*7
-
+def rt(n, d=2):
+    if n == 1:
+        return []
+    if n%d == 0:
+        return [d]+rt(n//d,d)
+    else:
+        return rt(n,d+1)
+n = int(input())
+print('*'.join(map(str,rt(n))))
